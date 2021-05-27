@@ -1,0 +1,46 @@
+vector<double> runningMedian(vector<int> a) {
+     priority_queue<double> queueleft ;  
+        priority_queue<double , vector<double> , greater<double >>  queueright ;  
+        vector<double> result ; 
+      double val  = a[0] ;    
+      queueleft.push(a[0]) ; 
+      result.push_back(a[0]) ; 
+      for(int i = 1 ; i < a.size() ;i++  ) {  
+        double x = a[i] ; 
+        if(queueleft.size() > queueright.size()) { 
+            if( x < val ) {
+            queueright.push((double)queueleft.top()) ;  
+            queueleft.pop() ;  
+            queueleft.push(x) ; 
+          }  
+          else { 
+              queueright.push(x) ; 
+          }
+            val = ((double)queueleft.top() + (double)queueright.top())/2;   
+        } 
+      else if(queueleft.size() == queueright.size()) {  
+            if(x < val ) { 
+                queueleft.push(x) ;   
+                val  = (double)queueleft.top() ; 
+            } 
+            else { 
+              queueright.push(x) ;  
+              val = (double)queueright.top() ; 
+            } 
+      } 
+      else { 
+        if(x > val ) { 
+          queueleft.push((double)queueright.top()) ;  
+          queueright.pop() ;  
+          queueright.push(x) ;  
+        }  
+        else {  
+          queueleft.push(x) ; 
+        }  
+        val = ((double)queueleft.top() + (double)queueright.top())/2.0 ;  
+      }
+    result.push_back(val) ; 
+      }
+    return result ; 
+
+}

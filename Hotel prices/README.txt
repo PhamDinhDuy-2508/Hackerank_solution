@@ -1,0 +1,15 @@
+In this challenge, the task is to debug the existing code to successfully execute all provided test files.
+
+The given code defines two classes HotelRoom and HotelApartment denoting respectively a standard hotel room and a hotel apartment. An instance of any of these classes has two parameters: bedrooms and bathrooms denoting respectively the number of bedrooms and the number of bathrooms in the room.
+
+The prices of a standard hotel room and hotel apartment are given as:
+
+Hotel Room:  + .
+Hotel Apartment: The price of a standard room with the same number bedrooms and bathrooms plus .
+For example, if a standard room costs , then an apartment with the same number of bedrooms and bathrooms costs .
+
+In hotel's codebase, there is a piece of code reading the list of rooms booked for today and calculates the total profit for the hotel. However, sometimes calculated profits are lower than they should be.
+
+Debug the existing HotelRoom and HotelApartment classes' implementations so that the existing code computing the total profit returns a correct profit.
+
+Your function will be tested against several cases by the locked template code.
